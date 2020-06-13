@@ -11,15 +11,43 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('index') }}">Home</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about') }}">About</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('postContact') }}">Sample Post</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                 </li>
+
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();" class="dropdown-item">
+                            <i class="fa fa-lock"></i> Logout
+                        </a>
+                    </li>
+                @else
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    </li>
+
+                @endif
             </ul>
         </div>
     </div>

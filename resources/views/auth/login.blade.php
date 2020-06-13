@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section ('title') Login @endsection
+@section ('title') Se connecter @endsection
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -57,7 +57,7 @@
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     </div>
-                            @endif
+                                @endif
 
 
                             <!--div class="col-6">
