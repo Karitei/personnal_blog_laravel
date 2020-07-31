@@ -11,9 +11,10 @@ class AdminController extends Controller
         $this->middleware('checkRole:admin');
     }
 
-    public function index(){
+ /*   public function index(){
         return view('admin.dashboard');
     }
+ */
     public function dashboard(){
         return view('admin.dashboard');
     }
