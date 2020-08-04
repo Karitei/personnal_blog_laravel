@@ -11,7 +11,7 @@
                         Register
                     </div>
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('/dashboard') }}">
                         @csrf
                         <div class="card-body py-5">
 
@@ -49,6 +49,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label">{{ __('Password') }} </label>
+                                <input type="password" class="form-control"  name="password" required autocomplete="new-password">
                             </div>
 
                             <div class="form-group">
